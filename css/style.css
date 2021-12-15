@@ -1,0 +1,61 @@
+body {
+  font-size: 1.5em;
+}
+
+.player {
+  border-radius: 0.5em;
+  padding: 1em;
+  border: 2px solid transparent;
+}
+
+
+/* Has both classes (player and playing) */
+.playing {
+  border: 2px solid tomato;
+}
+
+.play-pause {  /* when the player is not playing (showing "play") */
+  background-image: url('https://static.thenounproject.com/png/1813972-200.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: left;
+  padding-left: 1.5em;
+}
+
+/* Has the class .play-pause and is a descendent of .playing */
+.playing .play-pause { /* when the player IS playing (showing "pause") */
+  background-color: tomato;
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png');
+}
+
+button {
+  font: inherit;
+}
+
+.loaded {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.track-name {
+  color: darkgray;
+}
+
+.loaded .track-name {
+  color: red;
+}
+
+.album-art {
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.playing .album-art {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
