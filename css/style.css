@@ -1,13 +1,13 @@
 body {
   font-size: 1.5em;
+  background-color: #eee;
 }
 
 .player {
   border-radius: 0.5em;
   padding: 1em;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
 }
-
 
 /* Has both classes (player and playing) */
 .playing {
