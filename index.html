@@ -1,88 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Music Player</title>
-		<meta name="description" content="This is a simple music player">
-		<link rel="stylesheet" href="css/style.css">
-		<script src="https://juneate.github.io/music-playlist-player/js/script.js" type="module" defer></script>
-	</head>
-	<body>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Player</title>
+	<link rel="stylesheet" href="css/style1216.css">
+	<script src="js/script.js" type="module" defer></script>
+</head>
+<body>
+    <div class="player">
 
-		<h1>Music Player 🎶</h1>
+        <!-- Define the section for displaying details -->
+        <div class="details">
+        <div class="now-playing">Now playing</div>
+         <div><img src="img/beyonce.jpg" class="singer"></div>
 
-		<section class="player" id="audioPlayer">
+        <div class="track-artist">Beyonce</div>
+        </div>
 
-			<img src="" alt="Album art" id="trackImage" class="album-art">
+          <div class="player">
+        <div>   
+              <button id="playPrev">⏮</button>
+              <button id="playOrPause">▶️</button>
+              <button id="playNext">⏭</button>
+          </div>
+          <br>
+    	<div>
+          🔉<input type="range" id="trackVolume" min="0" max="1" step=".01" value="0.5">🔊
+        </div>
+        <br>
+        <div class="progress">
+          <data id="trackTime">0:00</data>
+          <input type="range" id="trackProgress" min="0" max="1" step="0.001" value="0">
+          <data id="trackDuration">0:00</data>
+        </div>
+  
+      </div>
 
-			<section>
-				<button id="playPrev">⏮</button>
-				<button 
-					id="playPause"
-					class="play-pause" 
-					data-play="Play" 
-					data-pause="Pause">
-					Play
-				</button>
-				<button id="playNext">⏭</button>
-			</section>
-
-			<section>
-				<b id="trackName">Track Name</b> by
-				<i id="trackArtist">Artist Name</i>
-				<div id="trackGenre"></div>
-				<p id="trackText"></p>
-			</section>
-
-			<section>
-				<data id="trackTime">-:--</data> / 
-				<data id="trackDuration">-:--</data>
-			</section>
-
-			<input type="range" id="trackProgress" min="0" max="1" step="0.001" value="0">
-			<input type="range" id="trackVolume" min="0" max="1" step="0.01" value="0.5">
-
-		</section>
-
-		<section class="playlist">
-			<h2>Song Queue</h2>
-			<ul id="audioPlaylist">
-
-				<li 
-					data-src="audio/bensound-sunny.mp3"
-					data-name="Hello World"
-					data-artist="The Beatles"
-					data-img="https://images.unsplash.com/photo-1602848596140-33c2b48c6ade?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1778&q=80">
-					<b class="track-name">Hello World</b><div>The Beatles</div>
-				</li>
-				
-				<li 
-					data-src="https://cdn.pixabay.com/audio/2021/11/01/audio_00fa5593f3.mp3"
-					data-name="Goodbye World"
-					data-artist="Whoever & The Whomevers"
-					data-text="Hey wait, this song has lyrics...?">
-					<b class="track-name">Goodbye World</b><div>Whoever & The Whomevers</div>
-				</li>
-
-				<li 
-					data-src="https://cdn.pixabay.com/audio/2021/07/27/audio_202082aa0b.mp3"
-					data-name="Another song"
-					data-artist="Whoever & The Whomevers">
-					<b class="track-name">Another song</b><div>Whoever & The Whomevers</div>
-				</li>
-
-				<li 
-					data-src="https://cdn.pixabay.com/audio/2021/11/13/audio_cb4f1212a9.mp3"
-					data-name="Blah blah blah"
-					data-artist="Whoever & The Blahs"
-					data-genre="Silly">
-					<b class="track-name">Blah blah blah</b><div>The Blahs</div>
-				</li>
-			</ul>
-		</section>
-
-
-	</body>
+	       <ul id="playlist"></ul>
+   
+    </div>
+</body>
 </html>

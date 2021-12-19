@@ -1,61 +1,140 @@
+.song:hover {
+  background-color: antiquewhite;
+}
+.day {
+  border: 1px solid #999;
+}
+.single {
+  background-color: gold;
+}
+.double {
+  background-color: lightgrey;
+}
+
 body {
-  font-size: 1.5em;
-  background-color: #eee;
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+
+  /* Smoothly transition the background color */
+  transition: background-color 0.5s;
 }
 
+/* Using flex with the column direction to
+    align items in a vertical direction */
 .player {
-  border-radius: 0.5em;
-  padding: 1em;
-  border: 3px solid transparent;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Has both classes (player and playing) */
-.playing {
-  border: 2px solid tomato;
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
 }
 
-.play-pause {  /* when the player is not playing (showing "play") */
-  background-image: url('https://static.thenounproject.com/png/1813972-200.png');
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: left;
-  padding-left: 1.5em;
+.singer {
+  margin: 25px;
+  height: 350px;
+  width: 350px;
+  background-image: URL("img/beyonce");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15%;
 }
 
-/* Has the class .play-pause and is a descendent of .playing */
-.playing .play-pause { /* when the player IS playing (showing "pause") */
-  background-color: tomato;
-  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png');
-}
-
-button {
-  font: inherit;
-}
-
-.loaded {
-  background-color: rgba(0,0,0,0.1);
+/* Changing the font sizes to suitable ones */
+.now-playing {
+  font-size: 1rem;
 }
 
 .track-name {
-  color: darkgray;
+  font-size: 3rem;
 }
 
-.loaded .track-name {
-  color: red;
+.track-artist {
+  font-size: 1.5rem;
+  margin: 20px;
 }
 
-.album-art {
-  width: 10em;
-  height: 10em;
-  object-fit: cover;
+/* Using flex with the row direction to
+    align items in a horizontal direction */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+/* Modify the appearance of the slider */
+.seek_slider,
+.volume_slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: black;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
   border-radius: 50%;
-  display: block;
-}
-.playing .album-art {
-  animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover,
+.volume_slider:hover {
+  opacity: 1;
+}
+
+.seek_slider {
+  width: 60%;
+}
+
+.volume_slider {
+  width: 30%;
+}
+
+.current-time,
+.total-duration {
+  padding: 10px;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+  padding: 10px;
+}
+
+/* Change the mouse cursor to a pointer
+    when hovered over */
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+  cursor: pointer;
+}
+
+.song.loaded {
+  background-color: lightcoral;
+}
+
+.progress {
+  display: flex;
+}
+.progress input {
+  flex-grow: 1;
 }
